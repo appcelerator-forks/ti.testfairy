@@ -21,6 +21,7 @@ script:
  - echo "hi 2"
  - source script.sh
  - echo "hi 3"
+ - cd $MODULE_ROOT
  - find . -ls
  
 deploy:
@@ -31,6 +32,5 @@ deploy:
     - ios/com.testfairy.titestfairy-iphone-1.4.6.zip
   skip_cleanup: true
   on:
-    tags: true
     all_branches: true
 

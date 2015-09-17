@@ -1,17 +1,19 @@
 language: objective-c
 env: 
+
 global:
 - MODULE_NAME=com.testfairy.titestfairy
+
 before_install:
 - MODULE_ROOT=$PWD
 - brew update
+
 install:
 - cd $MODULE_ROOT
 - curl -o install.sh https://raw.githubusercontent.com/appcelerator-modules/ci/master/travis/install.sh
 - source install.sh
+
 script:
-- echo "hi 1"
-- find . -ls
 - echo "hi 2"
 - source script.sh
 - echo "hi 3"

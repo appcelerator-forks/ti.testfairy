@@ -21,11 +21,16 @@ script:
  - echo "hi 2"
  - source script.sh
  - echo "hi 3"
- 
-after_success: # and this only on success
- - echo "hi 4"
- - curl -o deploy.sh https://raw.githubusercontent.com/appcelerator-modules/ci/master/travis/deploy.sh
- - source deploy.sh
- - echo "hi 5"
- - cd $MODULE_ROOT
  - find . -ls
+ 
+deploy:
+  provider: releases
+  api_key:
+    secure: clPUw+p15GH9UkanMN3maNzBDQo1Wwb4sxt2GGO1aB3SI80++7vkAgwTXkG0hBSvbhc+wjVcpinAkOs3EPrmNnw3M96Yq96HEr2IFr6sQtceesQs1MAcf5H4q52HGzuoo6pQFDs5w9+YlJAr/NntGnXkL+wSD99SkkSE2bQjknA=
+  file: 
+    - ios/com.testfairy.titestfairy-iphone-1.4.6.zip
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
+

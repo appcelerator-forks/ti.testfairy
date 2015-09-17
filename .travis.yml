@@ -17,7 +17,7 @@ install:
 script: 
  - echo "hi 1" 
  - find . -ls
- - curl -o script.sh https://raw.githubusercontent.com/appcelerator-modules/ci/master/travis/script.sh
+ # - curl -o script.sh https://raw.githubusercontent.com/appcelerator-modules/ci/master/travis/script.sh
  - echo "hi 2"
  - source script.sh
  - echo "hi 3"

@@ -1,37 +1,28 @@
 language: objective-c
-
-env:
+env: 
 global:
- - "MODULE_NAME=com.testfairy.titestfairy"
-
+- MODULE_NAME=com.testfairy.titestfairy
 before_install:
- - MODULE_ROOT=$PWD
- - brew update
-
+- MODULE_ROOT=$PWD
+- brew update
 install:
- - cd $MODULE_ROOT
- - curl -o install.sh https://raw.githubusercontent.com/appcelerator-modules/ci/master/travis/install.sh
- - source install.sh
- 
- 
-script: 
- - echo "hi 1" 
- - find . -ls
- # - curl -o script.sh https://raw.githubusercontent.com/appcelerator-modules/ci/master/travis/script.sh
- - echo "hi 2"
- - source script.sh
- - echo "hi 3"
- - cd $MODULE_ROOT
- - find . -ls
- 
+- cd $MODULE_ROOT
+- curl -o install.sh https://raw.githubusercontent.com/appcelerator-modules/ci/master/travis/install.sh
+- source install.sh
+script:
+- echo "hi 1"
+- find . -ls
+- echo "hi 2"
+- source script.sh
+- echo "hi 3"
+- cd $MODULE_ROOT
+- find . -ls
+
 deploy:
   provider: releases
   api_key:
-    secure: clPUw+p15GH9UkanMN3maNzBDQo1Wwb4sxt2GGO1aB3SI80++7vkAgwTXkG0hBSvbhc+wjVcpinAkOs3EPrmNnw3M96Yq96HEr2IFr6sQtceesQs1MAcf5H4q52HGzuoo6pQFDs5w9+YlJAr/NntGnXkL+wSD99SkkSE2bQjknA=
-  file: 
-    - ios/com.testfairy.titestfairy-iphone-1.4.6.zip
-  skip_cleanup: true
+    secure: PNh8JN7Qkh9iYq8fgVjGOO72us9/P2+ksxO7+Z0wC9SAiviZWWArndxvNL+CQNPd3CN6ImuOtEk1cHI+5M3VUpuUje6+h4SES1EVI9O6SJxMmHDpxlsl7O9qu6dHi30IMdpkRRBr0cEVHsDrhTdyPcUf0fv/AdXK3bKLv1ueE37hdIVp2ndo/6shovVNpYPSdKkHU72wbzkbd/v7a/HeAlV1R0C2yV35iawVbYJRO1vT5wKvFOnBmikHQgUywC1UKtIEgO7cEBP5nmIkyMALtw9P4shs1oQVh2XsUPICD+9VhzpHPmxDJKiaLM+LAmQfQdXRZw8C8rcqRkkKvcEhDL0g2PqQcJwLgPqqtgleUZmSUl4dM/2RlWd2nE7qolIjIfVfQ41k+vIDSS2uAA32FUN+j426QcYsg5BVAngHU1qL0pZUddBSaup06UaoBxPZv8ybsKFiUsALlkCepaVk0DaNjLZGZuJlJvVDrESUq0WJ2H/o6IQj9HA1EJmWL+t3znboGfbBFSV7IrrwE+vNIOHZanvmIa7XHSfO6BydGCeLMKGYgkFFz5J71oH6AEL5N92sgTS6RK7svbDT2wjeB4cT41DBQrYe2DqpOsuaT4NEjwroU9XmYM+kIOCadv2VTIT/lQmZLljprAVPIPTTHOiV+dFdP2RHF4a4ioBQc3s=
+  file: ios/com.testfairy.titestfairy-iphone-1.4.6.zip
   on:
-    tags: true
-    all_branches: true
-
+    repo: testfairy/ti.testfairy
+    branch: test

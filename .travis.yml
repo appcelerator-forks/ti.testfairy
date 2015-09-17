@@ -32,5 +32,6 @@ deploy:
     - ios/com.testfairy.titestfairy-iphone-1.4.6.zip
   skip_cleanup: true
   on:
+    tags: true
     all_branches: true
 

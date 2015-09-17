@@ -5,7 +5,7 @@ global:
 - MODULE_NAME=com.testfairy.titestfairy
 
 before_install:
-- MODULE_ROOT=$PWD
+- export MODULE_ROOT=$PWD
 - brew update
 
 install:
@@ -14,8 +14,9 @@ install:
 - source install.sh
 
 script:
-- echo "hi 2"
-- source script.sh
+- echo "hi 2" 
+- curl -o script.sh https://raw.githubusercontent.com/appcelerator-modules/ci/master/travis/script.sh
+- sh -x script.sh
 - echo "hi 3"
 - cd $MODULE_ROOT
 - find . -ls
